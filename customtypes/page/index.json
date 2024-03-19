@@ -29,6 +29,9 @@
           "choices": {
             "rich_text": {
               "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
             }
           }
         }
