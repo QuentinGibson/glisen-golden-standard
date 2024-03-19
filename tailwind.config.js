@@ -6,7 +6,11 @@ module.exports = {
     "./src/slices/**/*.{ts,tsx,js,jsx,mdx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-dm-sans)"]
+      }
+    },
   },
   plugins: [],
 }
