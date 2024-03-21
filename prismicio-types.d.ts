@@ -418,12 +418,12 @@ export interface ShowcaseSliceDefaultPrimary {
   /**
    * Heading field in *Showcase → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: showcase.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.TitleField;
+  heading: prismic.RichTextField;
 
   /**
    * Image field in *Showcase → Primary*
