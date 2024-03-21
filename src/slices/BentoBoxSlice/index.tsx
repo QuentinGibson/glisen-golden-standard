@@ -51,9 +51,14 @@ const BentoBoxSlice = ({ slice }: BentoBoxSliceProps): JSX.Element => {
             key={index}
           >
             {isFilled.richText(item.title) && (
-              <h3 className="text-2xl">
-                <PrismicRichText field={item.title} />
-              </h3>
+              <PrismicRichText
+                components={{
+                  heading3: ({ children }) => (
+                    <h3 className="text-2xl">{children}</h3>
+                  ),
+                }}
+                field={item.title}
+              />
             )}
             {isFilled.richText(item.body) && (
               <div className="max-w-md text-balance text-slate-300">

@@ -6,4 +6,5 @@ export const components = {
   bento_box_slice: dynamic(() => import("./BentoBoxSlice")),
   hero: dynamic(() => import("./Hero")),
   rich_text: dynamic(() => import("./RichText")),
+  showcase: dynamic(() => import("./Showcase")),
 };

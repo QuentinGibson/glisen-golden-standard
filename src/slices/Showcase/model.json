@@ -1,8 +1,8 @@
 {
-  "id": "bento_box_slice",
+  "id": "showcase",
   "type": "SharedSlice",
-  "name": "BentoBoxSlice",
-  "description": "BentoBoxSlice",
+  "name": "Showcase",
+  "description": "Showcase",
   "variations": [
     {
       "id": "default",
@@ -18,24 +18,32 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2,em"
+            "single": "heading2"
           }
         },
-        "body": {
-          "type": "StructuredText",
+        "image": {
+          "type": "Image",
           "config": {
-            "label": "Body",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph"
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
           }
-        }
-      },
-      "items": {
-        "title": {
+        },
+        "icon": {
+          "type": "Select",
+          "config": {
+            "label": "Icon",
+            "placeholder": "",
+            "options": [
+              "gear",
+              "cycle"
+            ]
+          }
+        },
+        "subheading": {
           "type": "StructuredText",
           "config": {
-            "label": "Title",
+            "label": "SubHeading",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "heading3"
@@ -47,27 +55,26 @@
             "label": "Body",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph"
+            "multi": "paragraph,strong,em"
           }
         },
-        "image": {
-          "type": "Image",
+        "button_text": {
+          "type": "Text",
           "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Button Text",
+            "placeholder": ""
           }
         },
-        "wide": {
-          "type": "Boolean",
+        "button_link": {
+          "type": "Link",
           "config": {
-            "label": "Wide",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
           }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }
