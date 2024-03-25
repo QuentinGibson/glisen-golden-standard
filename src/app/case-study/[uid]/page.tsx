@@ -5,7 +5,7 @@ import { PrismicText, SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Bounded from "@/components/Bounded";
-import { PrismicError } from "@prismicio/client";
+import { PrismicError, asText } from "@prismicio/client";
 import StarGrid from "@/components/StarGrid";
 import { PrismicNextImage } from "@prismicio/next";
 
@@ -48,7 +48,7 @@ export async function generateMetadata({
     .catch(() => notFound());
 
   return {
-    title: page.data.meta_title,
+    title: `${page.data.meta_title || asText(page.data.company) + " Case Study"}`,
     description: page.data.meta_description,
   };
 }
