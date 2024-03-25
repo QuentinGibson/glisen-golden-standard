@@ -103,6 +103,7 @@ export type CaseStudyDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | IngetrationsSlice
   | CaseStudiesSlice
   | ShowcaseSlice
   | BentoBoxSliceSlice
@@ -539,6 +540,78 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Integrations → Primary*
+ */
+export interface IngetrationsSliceDefaultPrimary {
+  /**
+   * Heading field in *Integrations → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ingetrations.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *Integrations → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ingetrations.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Integrations → Items*
+ */
+export interface IngetrationsSliceDefaultItem {
+  /**
+   * Icons field in *Integrations → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ingetrations.items[].icons
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icons: prismic.SelectField<
+    "cloudflare" | "npm" | "github" | "figma" | "digitalocean" | "fly"
+  >;
+}
+
+/**
+ * Default variation for Integrations Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IngetrationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IngetrationsSliceDefaultPrimary>,
+  Simplify<IngetrationsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Integrations*
+ */
+type IngetrationsSliceVariation = IngetrationsSliceDefault;
+
+/**
+ * Integrations Shared Slice
+ *
+ * - **API ID**: `ingetrations`
+ * - **Description**: Ingetrations
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IngetrationsSlice = prismic.SharedSlice<
+  "ingetrations",
+  IngetrationsSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -810,6 +883,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IngetrationsSlice,
+      IngetrationsSliceDefaultPrimary,
+      IngetrationsSliceDefaultItem,
+      IngetrationsSliceVariation,
+      IngetrationsSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
