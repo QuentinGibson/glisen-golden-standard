@@ -5,6 +5,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PiArrowClockwiseFill, PiGear } from "react-icons/pi";
 import clsx from "clsx";
+import AnimatedContent from "./AnimatedContent";
 
 const icons = {
   gear: <PiGear />,
@@ -27,16 +28,18 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
       className="relavtive"
     >
       <div className="glow absolute -z-10 aspect-square w-full max-w-xl rounded-full bg-blue-400/20 blur-3xl filter" />
-      <PrismicRichText
-        components={{
-          heading2: ({ children }) => (
-            <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
-              {children}
-            </h2>
-          ),
-        }}
-        field={slice.primary.heading}
-      />
+      <AnimatedContent>
+        <PrismicRichText
+          components={{
+            heading2: ({ children }) => (
+              <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
+                {children}
+              </h2>
+            ),
+          }}
+          field={slice.primary.heading}
+        />
+      </AnimatedContent>
       <div className="bg-gradient mt-16 grid items-center gap-8 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 p-8 backdrop-blur-sm lg:grid-cols-3 lg:gap-0 lg:py-12">
         <div className="">
           <div className="w-fit rounded-lg bg-blue-500/35 p-4 text-3xl">
