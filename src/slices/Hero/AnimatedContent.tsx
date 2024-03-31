@@ -99,7 +99,8 @@ export default function AnimatedContent({ slice }: AnimatedContentProps) {
         <div className="hero__image glass-container mt-16 w-fit opacity-0">
           {/* Glow */}
           <div className="hero__glow absolute inset-0 -z-10 bg-blue-500/30 opacity-0 blur-2xl filter" />
-          <PrismicNextImage field={slice.primary.image} />
+          <PrismicNextImage field={slice.primary.image} imgixParams={{
+            width: 1052, height: 692, auto: "compress", cs: "srgb" }} loading="eager" />
         </div>
       )}
     </div>
