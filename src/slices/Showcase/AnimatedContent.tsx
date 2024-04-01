@@ -6,6 +6,7 @@ import gsap from "gsap";
 import usePrefersReducedMotion from "@/hook/usePrefersReducedMotion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 export default function AnimatedContent({
   children,
 }: {
